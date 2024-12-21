@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="post-title">Blog Post</h1>
+    </header>
+    <main>
+        <section id="blog-content">
+            Loading...
+        </section>
+    </main>
+
+    <script>
+        async function loadPost() {
+            const params = new URLSearchParams(window.location.search);
+            const postName = params.get('post');
+            
+            if (postName) {
+                const response = await fetch(`posts/${postName}.md`);
+                const markdown = await response.text();
+                document.getElementById('blog-content').innerHTML = marked.parse(markdown);
+                
+                // Set Title
+                const headings = markdown.match(/^# (.*$)/m);
+                document.title = headings ? headings[1] : 'Blog Post';
+                document.getElementById('post-title').innerText = headings ? headings[1] : 'Blog Post';
+            } else {
+                document.getElementById('blog-content').innerHTML = "<p>Post not found.</p>";
+            }
+        }
+
+        loadPost();
+    </script>
+</body>
+</html>
