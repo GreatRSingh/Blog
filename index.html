@@ -5,22 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rakshit's Blog</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <header>
         <h1>Rakshit's Blog</h1>
     </header>
     <main>
-        <section class="blog-list">
-            <article>
-                <h2><a href="post.html?post=pokemon">Pokémon Adventures</a></h2>
-                <p>A fun dive into my favorite Pokémon experiences.</p>
-            </article>
-            <article>
-                <h2><a href="post.html?post=day_in_life">A Day in the Life</a></h2>
-                <p>Sharing what a typical day looks like for me.</p>
-            </article>
+        <section id="blog-list" class="blog-list">
+            Loading blog previews...
         </section>
     </main>
+
+    <script>
+        async function loadPreviews() {
+            const blogList = document.getElementById('blog-list');
+            blogList.innerHTML = '';
+
+            const response = await fetch('posts/index.json'); // List of posts
+            const posts = await response.json();
+
+            for (const post of posts) {
+                const postResponse = await fetch(`posts/${post.file}`);
+                const markdown = await postResponse.text();
+                const preview = marked.parse(markdown.split('---')[0]); // Render up to the first ---
+
+                const article = document.createElement('article');
+                article.innerHTML = `
+                    <h3><a href="post.html?post=${post.file.replace('.md', '')}">${post.title}</a></h3>
+                    ${preview}
+                    <hr>
+                `;
+
+                blogList.appendChild(article);
+            }
+        }
+
+        loadPreviews();
+    </script>
 </body>
 </html>
