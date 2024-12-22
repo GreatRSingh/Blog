@@ -4,45 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="wRnjLmAfsq40YMI3HuaNCsqSyThhMhNZ9DyuZj0zuig" />
-    <title>Rakshit's Blog</title>
+    <title>Rakshit's Personal Site</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Rakshit's Blog</h1>
-    </header>
-    <main>
-        <section id="blog-list" class="blog-list">
-            Loading blog previews...
+    <div class="container">
+        <header>
+            <h1>Rakshit Kr. Singh</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="posts.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+        
+        <section class="about section">
+            <h2>About Me</h2>
+            <p>Hello! I'm Rakshit, an ML Engineer passionate about building things and exploring the world of Pokémon. I love contributing to open-source projects and sharing my thoughts through writing.</p>
         </section>
-    </main>
-
-    <script>
-        async function loadPreviews() {
-            const blogList = document.getElementById('blog-list');
-            blogList.innerHTML = '';
-
-            const response = await fetch('posts/index.json'); // List of posts
-            const posts = await response.json();
-
-            for (const post of posts) {
-                const postResponse = await fetch(`posts/${post.file}`);
-                const markdown = await postResponse.text();
-                const preview = marked.parse(markdown.split('---')[0]); // Render up to the first ---
-
-                const article = document.createElement('article');
-                article.innerHTML = `
-                    <h3><a href="post.html?post=${post.file.replace('.md', '')}">${post.title}</a></h3>
-                    ${preview}
-                    <hr>
-                `;
-
-                blogList.appendChild(article);
-            }
-        }
-
-        loadPreviews();
-    </script>
+        
+        <section class="projects section">
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <a href="projects/ml4e.html">ML4E - Machine Learning for Everyone</a>
+                    <p class="subtitle">A community-driven initiative to make ML accessible to all.</p>
+                </li>
+                <li>
+                    <a href="projects/gsoc.html">Google Summer of Code 2023</a>
+                    <p class="subtitle">My journey and contributions to open-source during GSoC.</p>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="recent-posts section">
+            <h2>Recent Blog Posts</h2>
+            <ul>
+                <li>
+                    <a href="posts/pokemon-theory.html">Exploring Pokémon Evolution Mechanics</a>
+                    <p class="subtitle">A deep dive into how Pokémon evolve and the mechanics behind it.</p>
+                </li>
+                <li>
+                    <a href="posts/day-in-life.html">A Day in the Life of an ML Engineer</a>
+                    <p class="subtitle">A glimpse into the daily routine and challenges faced as an ML Engineer.</p>
+                </li>
+            </ul>
+        </section>
+        
+        <footer>
+            <p>&copy; 2024 Rakshit | Built with HTML, CSS and Python</p>
+        </footer>
+    </div>
 </body>
 </html>
