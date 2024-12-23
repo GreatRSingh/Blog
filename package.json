@@ -26,6 +26,7 @@
     "@wcj/markdown-to-html": "^3.0.4",
     "gray-matter": "^4.0.3",
     "markdown-to-jsx": "^7.7.2",
+    "sitemap-generator": "^8.5.1",
     "tsx": "^4.19.2"
   }
 }
