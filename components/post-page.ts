@@ -34,7 +34,7 @@ const PostPage = (postName: any) => {
   <meta name="description" content="${post.data.subtitle}" />
   <title>Rakshit's Personal Site</title>
   <link rel="stylesheet" href="../style.css">
-  <link rel="canonical" href="https://greatrsingh.github.io/blog/posts/${slug}.html">
+  <link rel="canonical" href="https://www.greatrsingh.in/posts/${slug}.html">
 </head>
 
 <body>
