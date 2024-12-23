@@ -29,7 +29,7 @@ const HomePage = () => {
     <meta name="google-site-verification" content="wRnjLmAfsq40YMI3HuaNCsqSyThhMhNZ9DyuZj0zuig" />
     <meta name="description" content="A personal blog by Rakshit exploring a variety of topics from Pokémon to everyday life. Featuring a simple, old-school design with markdown-rendered posts and a nostalgic feel." />    <title>Rakshit's Personal Site</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="canonical" href="https://greatrsingh.github.io/blog/">
+    <link rel="canonical" href="https://www.greatrsingh.in/">
 </head>
 <body>
     <div class="container">
