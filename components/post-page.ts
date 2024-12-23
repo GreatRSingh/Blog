@@ -31,6 +31,7 @@ const PostPage = (postName: any) => {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="wRnjLmAfsq40YMI3HuaNCsqSyThhMhNZ9DyuZj0zuig" />
+  <meta name="description" content="${post.data.subtitle}" />
   <title>Rakshit's Personal Site</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="canonical" href="https://greatrsingh.github.io/blog/posts/${slug}.html">
