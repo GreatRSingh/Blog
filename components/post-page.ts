@@ -33,6 +33,7 @@ const PostPage = (postName: any) => {
   <meta name="google-site-verification" content="wRnjLmAfsq40YMI3HuaNCsqSyThhMhNZ9DyuZj0zuig" />
   <title>Rakshit's Personal Site</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="canonical" href="https://greatrsingh.github.io/blog/posts/${slug}.html">
 </head>
 
 <body>

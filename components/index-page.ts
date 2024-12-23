@@ -29,6 +29,7 @@ const HomePage = () => {
     <meta name="google-site-verification" content="wRnjLmAfsq40YMI3HuaNCsqSyThhMhNZ9DyuZj0zuig" />
     <title>Rakshit's Personal Site</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://greatrsingh.github.io/blog/">
 </head>
 <body>
     <div class="container">
