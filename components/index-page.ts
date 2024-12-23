@@ -1,4 +1,26 @@
+import getPostMetadata from "./getPostMetadata";
 
+const HomePage = () => {
+
+  const postMetadata = getPostMetadata();
+
+  let postPreview = `
+                <ul>
+  `
+  
+  for (let i = 0; i < postMetadata.length; i++) {
+    postPreview += `
+                    <li>
+                    <a href="${'posts/' + postMetadata[i].slug + '.html'}">${postMetadata[i].title}</a> [${postMetadata[i].date}]
+                    <p class="subtitle">${postMetadata[i].subtitle}</p>
+                    </li>
+    `
+  }
+  postPreview += `
+                </ul>
+  `
+
+  return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,21 +64,7 @@
         
         <section class="recent-posts section">
             <h2>Recent Blog Posts</h2>
-            
-                <ul>
-  
-                    <li>
-                    <a href="posts/useful-blogs.html">Useful study resources I want you to read.</a> [2024-12-4]
-                    <p class="subtitle">Lots of useful resources.</p>
-                    </li>
-    
-                    <li>
-                    <a href="posts/machine-learning-starter-guide.html">Machine Learning Starter Guide</a> [2024-3-30]
-                    <p class="subtitle">Unleashing the Power of Data: A Beginner's Journey into Machine Learning</p>
-                    </li>
-    
-                </ul>
-  
+            ${postPreview}
 
         </section>
         
@@ -65,4 +73,8 @@
         </footer>
     </div>
 </body>
-</html>
+</html>`
+  ;
+};
+
+export default HomePage;

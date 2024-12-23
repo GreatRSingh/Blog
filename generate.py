@@ -24,7 +24,8 @@ def generate_html(template_folder_path, post_folder_path):
         file_path = os.path.join(post_folder_path, filename)
 
         with open(file_path, 'r') as f:
-            metadata, content = f.read().split('----')
+            metadata = f.read().split('----')[0]
+            content = f.read()
 
             title, subtitle, date = metadata.splitlines()
             link = os.path.join('posts', filename.replace("md", "html"))

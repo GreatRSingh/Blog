@@ -1,0 +1,31 @@
+{
+  "name": "home-page",
+  "version": "0.0.5",
+  "description": "Rakshit Kr. Singh personal page",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsx build.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greatrsingh/blog.git"
+  },
+  "keywords": [
+    "markdown",
+    "static"
+  ],
+  "author": "Rakshit Kr. Singh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/greatrsingh/blog/issues"
+  },
+  "homepage": "https://github.com/greatrsingh/blog#readme",
+  "dependencies": {
+    "@types/node": "^22.10.2",
+    "@wcj/markdown-to-html": "^3.0.4",
+    "gray-matter": "^4.0.3",
+    "markdown-to-jsx": "^7.7.2",
+    "tsx": "^4.19.2"
+  }
+}
