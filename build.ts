@@ -3,6 +3,9 @@ import PostPage, {generateStaticParams} from "./components/post-page";
 import HomePage from "./components/index-page";
 
 
+// Delete old dir
+fs.rmSync('dist', { recursive: true, force: true })
+
 // Building Folder Structure
 fs.mkdirSync('dist')
 fs.mkdirSync('dist/posts')
