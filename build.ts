@@ -6,12 +6,12 @@ import HomePage from "./components/index-page";
 // Building Folder Structure
 fs.mkdirSync('dist')
 fs.mkdirSync('dist/posts')
-fs.mkdirSync('style')
+fs.mkdirSync('dist/style')
 
 // Copy the sitemap and style
 fs.copyFileSync('sitemap.txt', 'dist/sitemap.txt');
 fs.copyFileSync('style/mobile.css', 'dist/style/mobile.css');
-fs.copyFileSync('style/desk.css', 'dist/style.css')
+fs.copyFileSync('style/desktop.css', 'dist/style/desktop.css')
 
 
 const posts = generateStaticParams()
