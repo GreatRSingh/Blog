@@ -51,12 +51,14 @@ const PostPage = (postName: any) => {
       </nav>
     </header>
 
-    <section class="about section">
+    <section class="post-header">
       <h2>${post.data.title}</h2>
-      <p>${post.data.subtitle}</p>
+      <p>${post.data.date}</p>
     </section>
 
+    <div class="content">
     ${markdown(post.content)}
+    </div>
 
     <footer>
       <p>&copy; 2024 Rakshit | Built with HTML, CSS and Python</p>
